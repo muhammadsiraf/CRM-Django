@@ -19,7 +19,7 @@ from leads.views import item_list, item_detail, index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index'),
+    path('', index, name='home'),
     path('leads/', include("leads.urls")),
     path('items/', item_list, name='item-list'),
     path('items/<int:detail>/', item_detail, name='item-detail'),
