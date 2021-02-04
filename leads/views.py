@@ -15,7 +15,7 @@ def home_view(request):
         "leads": leads
     }
 
-    return render(request, "index.html",context = context)
+    return render(request, "lead_list.html",context = context)
 
 
 def detail_lead(request, pk):
@@ -23,7 +23,7 @@ def detail_lead(request, pk):
     context = {
         "lead":lead
     }
-    return render(request, "detail.html", context=context)
+    return render(request, "lead_detail.html", context=context)
 
 def update_lead(request, pk):
     lead = get_object_or_404(Lead, pk=pk)
@@ -38,7 +38,7 @@ def update_lead(request, pk):
             'form' : form
             
         }
-        return render(request, 'update.html', context = context)
+        return render(request, 'lead_update.html', context = context)
 
 
 def create_lead(request):
@@ -58,7 +58,7 @@ def create_lead(request):
     context = {
         'form':form
     }
-    return render(request, "create.html", context=context)
+    return render(request, "lead_create.html", context=context)
 
 def delete_lead(request, pk):
     lead = get_object_or_404(Lead, pk=pk)
