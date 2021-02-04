@@ -1,0 +1,14 @@
+<html>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <h1>Hello World</h1>
+    <br>
+    <a href="{% url 'create_leads' %}">Create Leads</a>
+    <hr>
+    <br>
+    <!-- {{leads}} -->
+    {% for data in leads %}
+        <a href="{{data.get_absolute_url}}"><h4>{{data.first_name}} {{data.last_name}}</h4></a>
+    {% endfor %}
+        
+</html>

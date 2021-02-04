@@ -1,0 +1,11 @@
+<html>
+    <h1>Detail Lead</h1>
+    <h5>
+        {{lead.first_name}}
+        {{lead.last_name}}
+        {{lead.age}}
+    </h5>
+    <a href="{% url 'update_lead' lead.pk %}">update</a><br>
+    <a href="{% url 'delete_lead' lead.pk %}">delete</a><br>
+    <a href="{% url 'index' %}">back</a>
+</html>
