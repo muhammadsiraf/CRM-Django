@@ -7,6 +7,9 @@ from .models import Lead,User,User, Item, Instance_Item
 from .forms import LeadForm, ItemForm, ItemInstanceForm, LeadFormModel
 
 # Create your views here.
+def index(request):
+    return render(request, 'landing.html')
+
 
 # KHUSUS LEAD
 def home_view(request):
@@ -31,7 +34,7 @@ def update_lead(request, pk):
         form = LeadFormModel(request.POST, instance=lead)
         if form.is_valid:
             form.save()
-            return redirect('index')
+            return redirect('detail_lead', pk=pk)
     else:
         form = LeadFormModel(instance = lead)
         context = {
